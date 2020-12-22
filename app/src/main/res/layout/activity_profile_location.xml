@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/save"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile_location">
+
+    <EditText
+        android:id="@+id/place"
+        android:layout_width="344dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="124dp"
+        android:ems="10"
+        android:hint="place"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/district"
+        android:layout_width="344dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="124dp"
+        android:ems="10"
+        android:hint="district"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/city" />
+
+    <EditText
+        android:id="@+id/city"
+        android:layout_width="344dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="124dp"
+        android:ems="10"
+        android:hint="city"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/place" />
+
+    <EditText
+        android:id="@+id/pincode"
+        android:layout_width="344dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:hint="pincode"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/district" />
+
+    <Button
+        android:id="@+id/button11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pincode" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
