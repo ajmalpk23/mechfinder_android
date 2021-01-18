@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="home"
+        android:id="@+id/home"/>
+    <item android:title="vehicle"
+        android:id="@+id/vehicle"/>
+    <item android:title="bot"
+        android:id="@+id/bot"/>
+    <item android:title="my account"
+        android:id="@+id/my_account"/>
+</menu>
