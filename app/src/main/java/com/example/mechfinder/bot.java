@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -21,7 +20,7 @@ public class bot extends AppCompatActivity implements BottomNavigationView.OnNav
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bot);
-        linearLayout=(LinearLayout)findViewById(R.id.linearLayout);
+        linearLayout=(LinearLayout)findViewById(R.id.lvs);
         bottomnavigation=(BottomNavigationView)findViewById(R.id.bottomnav);
 
 

@@ -30,7 +30,7 @@ public class order_history extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_history);
-        linearlayout=(LinearLayout)findViewById(R.id.linearLayout);
+        linearlayout=(LinearLayout)findViewById(R.id.lvs);
 
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url=sh.getString("url","")+"and_order_history";

@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -21,24 +22,27 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class vehicle extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
     ImageButton add;
-    LinearLayout linearLayout;
+    ListView lvs;
     BottomNavigationView bottomNavigationView;
     SharedPreferences sh;
     String url="";
+    ArrayList<String> vid,vtype,vcompany,vmodel,vreg,vmanyear,vimage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle);
         add=(ImageButton)findViewById(R.id.add);
-        linearLayout = (LinearLayout)findViewById(R.id.linearLayout);
+        lvs=(ListView)findViewById(R.id.lvs);
         bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNavigationView);
 
 
@@ -57,6 +61,37 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
                         // response
                         try {
                             JSONObject jsonObj = new JSONObject(response);
+                            String status=jsonObj.getString("veh_status");
+                            if(status.equalsIgnoreCase("1"))
+                            {
+                                JSONArray ja= jsonObj.getJSONArray("veh_data");
+                                vid=new ArrayList<>();
+                                vtype=new ArrayList<>();
+                                vcompany=new ArrayList<>();
+                                vmodel=new ArrayList<>();
+                                vreg=new ArrayList<>();
+                                vmanyear=new ArrayList<>();
+                                vimage=new ArrayList<>();
+
+                                for ( int i=0;i< ja.length(); i++)
+                                {
+                                    JSONObject jd= ja.getJSONObject(i);
+                                    vid.add(jd.getString("vehicle_id"));
+                                    vtype.add(jd.getString("vehicle_type"));
+                                    vcompany.add(jd.getString("company"));
+                                    vmodel.add(jd.getString("model"));
+                                    vreg.add(jd.getString("regno"));
+                                    vmanyear.add(jd.getString("manfctr_year"));
+                                    vimage.add(jd.getString("image"));
+
+
+                                }
+                                lvs.setAdapter(new Custome_vehicle(getApplicationContext(),vid,vtype,vcompany,vmodel,vreg,vmanyear,vimage));
+
+
+
+
+                            }
 
 
                         }    catch (Exception e) {
@@ -76,7 +111,7 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
             protected Map<String, String> getParams() {
 
                 Map<String, String> params = new HashMap<>();
-
+                params.put("lid",sh.getString("lid",""));
 
 
                 return params;

@@ -7,7 +7,7 @@
     tools:context=".complant_support">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/lvs"
         android:layout_width="402dp"
         android:layout_height="458dp"
         android:layout_marginStart="40dp"
@@ -33,7 +33,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/lvs"
         tools:layout_editor_absoluteX="24dp" />
 
     <Button

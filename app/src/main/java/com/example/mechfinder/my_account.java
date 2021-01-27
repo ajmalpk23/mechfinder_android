@@ -46,6 +46,7 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
         compalint.setOnClickListener(this);
         profile.setOnClickListener(this);
         changepassword.setOnClickListener(this);
+        logout.setOnClickListener(this);
     }
 
     @Override
@@ -98,6 +99,10 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
             Intent in = new Intent(getApplicationContext(),change_password.class);
             startActivity(in);
             Toast.makeText(this, "change passwoord", Toast.LENGTH_SHORT).show();
+        }
+        else if(logout==v){
+            Intent in=new Intent(getApplicationContext(),Login.class);
+            startActivity(in);
         }
 
 

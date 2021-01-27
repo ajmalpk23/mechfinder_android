@@ -32,7 +32,7 @@ public class invoice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_invoice);
-        linearLayout=(LinearLayout)findViewById(R.id.linearLayout);
+        linearLayout=(LinearLayout)findViewById(R.id.lvs);
 
 
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

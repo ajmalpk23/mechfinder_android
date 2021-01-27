@@ -81,6 +81,13 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                                 Intent in=new Intent(getApplicationContext(),home.class);
                                 startActivity(in);
+                                Intent in2=new Intent(getApplicationContext(),LocationService.class);
+                                startService(in2);
+                                String aaa=LocationService.lati;
+//                                Toast.makeText(getApplicationContext(), "lati="+aaa, Toast.LENGTH_LONG).show();
+
+
+
                             }
                             else{
                                 Toast.makeText(Login.this, "Invalid username or password", Toast.LENGTH_SHORT).show();

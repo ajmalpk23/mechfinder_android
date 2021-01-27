@@ -7,46 +7,59 @@
     tools:context=".home">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="174dp"
+        android:id="@+id/lvs"
+        android:layout_width="411dp"
+        android:layout_height="194dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001"></LinearLayout>
+        app:layout_constraintVertical_bias="0.001">
 
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="336dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+    </LinearLayout>
+
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="350dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/lvs">
 
-        <ListView
-            android:id="@+id/listview"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/paintingpic"
+            android:layout_width="wrap_content"
+            android:layout_height="87dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="190dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="12dp"
-        android:orientation="horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        <ImageView
+            android:id="@+id/Batteriespic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
 
+        <ImageView
+            android:id="@+id/WaterServicepic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
 
-    </LinearLayout>
+        <ImageView
+            android:id="@+id/Tyrespic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
+
+    </TableRow>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bttomnavigation"
@@ -56,6 +69,158 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:menu="@menu/bottom_menu_home"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="398dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow2">
+
+        <TextView
+            android:id="@+id/painting"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:text="Painting"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/Batteries"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="33dp"
+            android:layout_marginTop="4dp"
+            android:text="Batteries"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/WaterService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="4dp"
+            android:text="Water Service"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/Tyres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="4dp"
+            android:text="Wheel Care"
+            android:textAlignment="center" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="350dp"
+        android:layout_height="98dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow3">
+
+        <ImageView
+            android:id="@+id/Lightspic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/Deatiledpic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/Accessoriespic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
+
+        <ImageView
+            android:id="@+id/Windsheidspic"
+            android:layout_width="75dp"
+            android:layout_height="88dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher" />
+    </TableRow>
+
+    <TableRow
+
+        android:id="@+id/tableRow5"
+        android:layout_width="419dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow6">
+
+        <TextView
+            android:id="@+id/Lights"
+            android:layout_width="88dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="4dp"
+            android:text="Lights and Fitments"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/Deatiled"
+            android:layout_width="89dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="4dp"
+            android:text="Deatiled  Service"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/Accessories"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            android:text="Accessories"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/Windsheids"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_marginTop="4dp"
+            android:text="Windsheids and Glass"
+            android:textAlignment="center" />
+    </TableRow>
+
+    <LinearLayout
+        android:layout_width="405dp"
+        android:layout_height="177dp"
+        android:layout_marginEnd="6dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow5"></LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
