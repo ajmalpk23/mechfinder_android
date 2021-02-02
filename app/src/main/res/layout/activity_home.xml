@@ -7,7 +7,7 @@
     tools:context=".home">
 
     <LinearLayout
-        android:id="@+id/lvs"
+        android:id="@+id/listv2"
         android:layout_width="411dp"
         android:layout_height="194dp"
         android:orientation="horizontal"
@@ -17,6 +17,10 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.001">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
 
@@ -29,35 +33,35 @@
         android:layout_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvs">
+        app:layout_constraintTop_toBottomOf="@+id/listv2">
 
         <ImageView
             android:id="@+id/paintingpic"
-            android:layout_width="wrap_content"
-            android:layout_height="87dp"
+            android:layout_width="98dp"
+            android:layout_height="73dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/paint" />
 
         <ImageView
             android:id="@+id/Batteriespic"
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/batt" />
 
         <ImageView
             android:id="@+id/WaterServicepic"
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/water" />
 
         <ImageView
             android:id="@+id/Tyrespic"
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/tyre" />
 
     </TableRow>
 
@@ -139,28 +143,28 @@
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/light" />
 
         <ImageView
             android:id="@+id/Deatiledpic"
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/deta" />
 
         <ImageView
             android:id="@+id/Accessoriespic"
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/acc" />
 
         <ImageView
             android:id="@+id/Windsheidspic"
             android:layout_width="75dp"
             android:layout_height="88dp"
             android:layout_weight="1"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/oil" />
     </TableRow>
 
     <TableRow
@@ -208,19 +212,26 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="4dp"
-            android:text="Windsheids and Glass"
+            android:text="oil service"
             android:textAlignment="center" />
     </TableRow>
 
     <LinearLayout
-        android:layout_width="405dp"
-        android:layout_height="177dp"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
         android:layout_marginEnd="6dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow5"></LinearLayout>
+
+        app:layout_constraintTop_toBottomOf="@+id/tableRow5">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

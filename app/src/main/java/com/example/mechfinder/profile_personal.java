@@ -26,6 +26,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -37,6 +38,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.MemoryPolicy;
+import com.squareup.picasso.NetworkPolicy;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,6 +63,7 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 public class profile_personal extends AppCompatActivity implements View.OnClickListener {
     ImageView imageView;
     EditText name,phone,email;
+
     Button save,location;
     SharedPreferences sh;
     String url1="",url2="",url3="";
@@ -269,6 +274,16 @@ public class profile_personal extends AppCompatActivity implements View.OnClickL
                                 name.setText(mm.getString("name"));
                                 email.setText(mm.getString("email"));
                                 phone.setText(mm.getString("phone"));
+                                String a=mm.getString("user_image");
+
+                                SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+                                String url1=sh.getString("url","")+"static/user/profile/"+(a);
+                                Toast.makeText(getApplicationContext(),url1, Toast.LENGTH_LONG).show();
+
+
+
+
+                                Picasso.with(getApplicationContext()).load(url1).memoryPolicy(MemoryPolicy.NO_CACHE).networkPolicy(NetworkPolicy.NO_CACHE).into(imageView);
 
                             }
 

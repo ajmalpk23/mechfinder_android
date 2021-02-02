@@ -8,8 +8,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -29,12 +29,12 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class vehicle extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+public class vehicle extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     ImageButton add;
     ListView lvs;
     BottomNavigationView bottomNavigationView;
     SharedPreferences sh;
-    String url="";
+    String url="",lid;
     ArrayList<String> vid,vtype,vcompany,vmodel,vreg,vmanyear,vimage;
 
     @Override
@@ -42,12 +42,17 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle);
         add=(ImageButton)findViewById(R.id.add);
-        lvs=(ListView)findViewById(R.id.lvs);
+        lvs=(ListView)findViewById(R.id.listv2);
         bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setItemIconTintList(null);
 
 
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url=sh.getString("url","")+"and_vehicle";
+
+        lid=sh.getString("lid","");
+
+        add.setOnClickListener(this);
 
 
 
@@ -83,6 +88,7 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
                                     vreg.add(jd.getString("regno"));
                                     vmanyear.add(jd.getString("manfctr_year"));
                                     vimage.add(jd.getString("image"));
+
 
 
                                 }
@@ -133,7 +139,7 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
         if(item.getItemId()==R.id.vehicle){
             Toast.makeText(this, "vehicle section", Toast.LENGTH_SHORT).show();
         }
-        else if (item.getItemId()==R.id.home){
+        else if (item.getItemId()==R.id.chat111){
 
             Intent in=new Intent(getApplicationContext(),home.class);
             startActivity(in);
@@ -152,5 +158,12 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
             Toast.makeText(this, "account clicked", Toast.LENGTH_SHORT).show();
         }
         return false;
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent in=new Intent(getApplicationContext(),Registration_vehicle.class);
+        in.putExtra("lid",lid);
+        startActivity(in);
     }
 }

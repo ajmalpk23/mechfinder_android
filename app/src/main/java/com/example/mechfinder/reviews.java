@@ -81,7 +81,7 @@ public class reviews extends AppCompatActivity implements View.OnClickListener {
 
 
                                 }
-                                listView.setAdapter(new Custome_reviews(getApplicationContext(), id,name,date,feedback,rating));
+                                listView.setAdapter(new Custome_reviews(getApplicationContext(), id,name,rating,feedback,date));
 
 
 

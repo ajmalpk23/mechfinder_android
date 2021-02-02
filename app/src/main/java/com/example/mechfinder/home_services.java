@@ -45,7 +45,7 @@ public class home_services extends AppCompatActivity {
         imageView=(ImageView)findViewById(R.id.imageView2);
         textView=(TextView)findViewById(R.id.textView);
         linearLayout=(LinearLayout)findViewById(R.id.linearlayout);
-        lvs=(ListView) findViewById(R.id.lvs);
+        lvs=(ListView) findViewById(R.id.listv2);
 
 
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

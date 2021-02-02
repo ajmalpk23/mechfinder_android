@@ -7,7 +7,7 @@
     tools:context=".complant_support">
 
     <LinearLayout
-        android:id="@+id/lvs"
+        android:id="@+id/listv2"
         android:layout_width="402dp"
         android:layout_height="458dp"
         android:layout_marginStart="40dp"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ListView
-            android:id="@+id/lv"
+            android:id="@+id/lv_name"
             android:layout_width="354dp"
             android:layout_height="match_parent" />
     </LinearLayout>
@@ -33,7 +33,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@+id/lvs"
+        app:layout_constraintTop_toBottomOf="@+id/listv2"
         tools:layout_editor_absoluteX="24dp" />
 
     <Button

@@ -17,8 +17,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -27,6 +29,7 @@ public class notification extends AppCompatActivity {
     ListView listView;
     SharedPreferences sh;
     String url="";
+    ArrayList<String> image,sub,date,des;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,37 @@ public class notification extends AppCompatActivity {
                         // response
                         try {
                             JSONObject jsonObj = new JSONObject(response);
+                            String status=jsonObj.getString("not_status");
+
+                            if(status.equalsIgnoreCase("ok"))
+                            {
+                                JSONArray ja= jsonObj.getJSONArray("not_data");
+                                image=new ArrayList<>();
+                                sub=new ArrayList<>();
+                                date=new ArrayList<>();
+                                des=new ArrayList<>();
+//
+
+                                for ( int i=0;i< ja.length(); i++)
+                                {
+                                    JSONObject jd= ja.getJSONObject(i);
+                                    image.add(jd.getString("image"));
+                                    sub.add(jd.getString("subject"));
+                                    date.add(jd.getString("date"));
+                                    des.add(jd.getString("description"));
+//                                    shop_name.add(jd.getString("shop_name"));
+//                                    place.add(jd.getString("place"));
+//                                    phone.add(jd.getString("phone"));
+//                                    amount.add(jd.getString("amount"));
+
+
+                                }
+                                listView.setAdapter(new Custome_notification(getApplicationContext(), image,sub,date,des));
+
+
+
+
+                            }
 
 
                         }    catch (Exception e) {

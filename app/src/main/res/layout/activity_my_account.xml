@@ -20,8 +20,8 @@
         android:id="@+id/orderhistory"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="84dp"
         android:text="orderhistory"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/profile" />
@@ -111,8 +111,8 @@
         android:id="@+id/chat"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="32dp"
         android:text="chat"
         app:layout_constraintStart_toEndOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/orderhistory" />
@@ -122,17 +122,17 @@
         android:layout_width="250dp"
         android:layout_height="44dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="20dp"
         android:text="app feedback"
         app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/chat" />
+        app:layout_constraintTop_toBottomOf="@+id/profile" />
 
     <TextView
         android:id="@+id/complaint"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="160dp"
         android:text="complaint  support"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/appfeedback" />
@@ -142,7 +142,7 @@
         android:layout_width="250dp"
         android:layout_height="44dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="28dp"
         android:text="change password"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/complaint" />
@@ -151,8 +151,8 @@
         android:id="@+id/logout"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="12dp"
         android:text="logout"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintStart_toStartOf="@+id/imageView7"

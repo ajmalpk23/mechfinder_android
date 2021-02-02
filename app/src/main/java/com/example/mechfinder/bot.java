@@ -20,11 +20,12 @@ public class bot extends AppCompatActivity implements BottomNavigationView.OnNav
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bot);
-        linearLayout=(LinearLayout)findViewById(R.id.lvs);
+        linearLayout=(LinearLayout)findViewById(R.id.listv2);
         bottomnavigation=(BottomNavigationView)findViewById(R.id.bottomnav);
 
 
         bottomnavigation.setOnNavigationItemSelectedListener(this);
+        bottomnavigation.setItemIconTintList(null);
     }
 
     @Override
@@ -32,7 +33,7 @@ public class bot extends AppCompatActivity implements BottomNavigationView.OnNav
         if(item.getItemId()==R.id.bot){
             Toast.makeText(this, "bot section 3", Toast.LENGTH_SHORT).show();
         }
-        else if (item.getItemId()==R.id.home){
+        else if (item.getItemId()==R.id.chat111){
 
             Intent in=new Intent(getApplicationContext(),home.class);
             startActivity(in);

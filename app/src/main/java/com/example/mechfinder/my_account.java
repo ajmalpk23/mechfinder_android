@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class my_account extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
     ImageView imageView1,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7;
-    TextView profile,orderhistoty,chat,appfeedback,compalint,changepassword,logout;
+    TextView profile,orderhistoty,chat1,appfeedback,compalint,changepassword,logout;
     BottomNavigationView bottomnav;
 
     @Override
@@ -32,12 +31,13 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
         imageView7=(ImageView)findViewById(R.id.imageView7);
         profile=(TextView)findViewById(R.id.profile);
         orderhistoty=(TextView)findViewById(R.id.orderhistory);
-        chat=(TextView)findViewById(R.id.chat);
+        chat1=(TextView)findViewById(R.id.chat);
         appfeedback=(TextView)findViewById(R.id.appfeedback);
         compalint=(TextView)findViewById(R.id.complaint);
         changepassword=(TextView)findViewById(R.id.changepassword);
         logout=(TextView)findViewById(R.id.logout);
         bottomnav=(BottomNavigationView)findViewById(R.id.bottomnav);
+        bottomnav.setItemIconTintList(null);
 
 
 
@@ -47,6 +47,8 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
         profile.setOnClickListener(this);
         changepassword.setOnClickListener(this);
         logout.setOnClickListener(this);
+        orderhistoty.setOnClickListener(this);
+        chat1.setOnClickListener(this);
     }
 
     @Override
@@ -54,7 +56,7 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
         if(item.getItemId()==R.id.my_account){
             Toast.makeText(this, "bot section 3", Toast.LENGTH_SHORT).show();
         }
-        else if (item.getItemId()==R.id.home){
+        else if (item.getItemId()==R.id.chat111){
 
             Intent in=new Intent(getApplicationContext(),home.class);
             startActivity(in);
@@ -68,7 +70,7 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
 
         }
         else if (item.getItemId()==R.id.bot){
-            Intent in=new Intent(getApplicationContext(),my_account.class);
+            Intent in=new Intent(getApplicationContext(),bot.class);
             startActivity(in);
             Toast.makeText(this, "bot clicked 4", Toast.LENGTH_SHORT).show();
         }
@@ -103,6 +105,17 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
         else if(logout==v){
             Intent in=new Intent(getApplicationContext(),Login.class);
             startActivity(in);
+        }
+        else if(orderhistoty==v){
+            Intent in=new Intent(getApplicationContext(),order_history.class);
+            startActivity(in);
+
+        }
+        else if(chat1==v){
+            Intent in=new Intent(getApplicationContext(),Chat.class);
+            startActivity(in);
+
+
         }
 
 

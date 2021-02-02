@@ -7,12 +7,8 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION">
-
-    </uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -21,11 +17,23 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.Mechfinder">
-        <uses-library android:name="org.apache.http.legacy"
-            android:required="false"/>
-        <activity android:name=".complant_support"></activity>
+        android:theme="@style/Theme.Mechfinder"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".home_slide"></activity>
+        <activity android:name=".gallery" />
+        <activity android:name=".news" />
+        <activity android:name=".add_review" />
+        <activity android:name=".orderhistory_proceesing" />
+        <activity android:name=".orderhistory_success" />
+        <activity android:name=".orderhistory_approved" />
+        <activity android:name=".orderhistory_rejected" />
+        <activity android:name=".orderhistory_pending" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".complant_support" />
         <activity android:name=".app_feedback" />
         <activity android:name=".invoice" />
         <activity android:name=".order_history" />
@@ -33,16 +41,16 @@
         <activity android:name=".profile_personal" />
         <activity android:name=".checkout" />
         <activity android:name=".notification" />
-        <activity android:name=".saveip" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Chat"></activity>
+        <activity android:name=".saveip">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".reviews" />
         <activity android:name=".worckshop" />
-
         <activity android:name=".home_services" />
         <activity android:name=".my_account" />
         <activity android:name=".bot" />
@@ -53,11 +61,11 @@
         <activity android:name=".change_password" />
         <activity android:name=".registration" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" />
+        <activity android:name=".upi" />
 
-        </activity>
+        <service android:name=".LocationService" />
 
-        <service android:name=".LocationService"></service>
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="${applicationId}.provider"
@@ -67,7 +75,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
     </application>
 
 </manifest>

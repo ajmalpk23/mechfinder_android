@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -39,7 +38,7 @@ public class complant_support extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_complant_support);
-        lv=(ListView) findViewById(R.id.lv);
+        lv=(ListView) findViewById(R.id.lv_name);
         complaint=(EditText)findViewById(R.id.complaint);
         send=(Button)findViewById(R.id.send);
 
@@ -134,8 +133,7 @@ public class complant_support extends AppCompatActivity implements View.OnClickL
                                     reply.add(jo.getString("replay"));
                                     rdate.add(jo.getString("replay_date"));
                                 }
-                                ArrayAdapter<String> adapter=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,comp);
-                                lv.setAdapter(adapter);
+                                lv.setAdapter(new Custome_complaint(getApplicationContext(), comp,cdate,reply,rdate));
                             }
 
 

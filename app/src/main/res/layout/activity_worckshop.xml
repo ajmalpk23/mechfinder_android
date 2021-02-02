@@ -7,34 +7,45 @@
     tools:context=".worckshop">
 
     <LinearLayout
-        android:id="@+id/lvs"
+        android:id="@+id/listv2"
         android:layout_width="405dp"
         android:layout_height="210dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.005"></LinearLayout>
+        app:layout_constraintVertical_bias="0.005">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="121dp"
-        android:layout_height="35dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="337dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.206"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvs" />
+        app:layout_constraintTop_toBottomOf="@+id/listv2" />
 
     <TableRow
         android:id="@+id/tableRow"
-        android:layout_width="398dp"
-        android:layout_height="33dp"
-        android:layout_marginTop="4dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,78 +53,88 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="122dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:text="place" />
 
         <TextView
             android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:text="city" />
 
         <TextView
             android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
             android:text="district" />
     </TableRow>
 
     <ListView
         android:id="@+id/listview"
-        android:layout_width="410dp"
-        android:layout_height="289dp"
-        android:layout_marginTop="56dp"
+        android:layout_width="0dp"
+        android:layout_height="267dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableRow">
+        app:layout_constraintTop_toBottomOf="@+id/textView13">
 
     </ListView>
 
     <TableRow
         android:id="@+id/tablerow2"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
         android:gravity="right|left"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listview">
 
         <TextView
             android:id="@+id/amount"
-            android:layout_width="124dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:gravity="center_vertical"
             android:text="amount" />
 
 
         <Button
             android:id="@+id/reviews"
-            android:layout_width="124dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
             android:text="reviews" />
 
         <Button
             android:id="@+id/checkout"
-            android:layout_width="124dp"
-            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
             android:text="Checkout" />
 
     </TableRow>
 
     <TextView
         android:id="@+id/textView12"
-        android:layout_width="129dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="240dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:text="email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow" />
 
@@ -121,10 +142,12 @@
         android:id="@+id/textView13"
         android:layout_width="64dp"
         android:layout_height="0dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="120dp"
         android:text="phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintStart_toEndOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/tableRow" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

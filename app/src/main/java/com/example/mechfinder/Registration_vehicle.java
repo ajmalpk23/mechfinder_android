@@ -204,7 +204,7 @@ public class Registration_vehicle extends AppCompatActivity implements View.OnCl
                                 String status=obj.getString("status");
                                 if(status.equalsIgnoreCase("ok")){
                                     Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
-                                    Intent in=new Intent(getApplicationContext(),Login.class);
+                                    Intent in=new Intent(getApplicationContext(),home.class);
                                     startActivity(in);
                                 }
                                 else{

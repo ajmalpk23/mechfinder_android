@@ -52,7 +52,7 @@ public class LocationService extends Service {
 	String pc = "";
 	SharedPreferences sh;
 	String userType = "";
-	public static String place = "", address = "", lati = "", logi = "";
+	public static String place = "Kozhikode", address = "", lati = "", logi = "";
 
 
 	LocationListener locationListener = new LocationListener() {

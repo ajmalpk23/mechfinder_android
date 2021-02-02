@@ -2,12 +2,12 @@ package com.example.mechfinder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +42,7 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 //        linearLayout=(LinearLayout)findViewById(R.id.lvs);
-        chat=(Button)findViewById(R.id.chat);
+        chat=(Button)findViewById(R.id.chat111);
         placeorder=(Button)findViewById(R.id.placeorder);
         name=(TextView)findViewById(R.id.textView31);
         city=(TextView)findViewById(R.id.textView33);
@@ -52,7 +52,7 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
         username=(TextView)findViewById(R.id.textView34);
         vehicle=(TextView)findViewById(R.id.textView35);
         totalAmount1=(TextView)findViewById(R.id.textView38);
-        lvs=(ListView)findViewById(R.id.lvs);
+        lvs=(ListView)findViewById(R.id.listv2);
 
 
 
@@ -63,8 +63,8 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
 
         totalAmount1.setText(sh.getString("totalamount",""));
 
-
-
+//
+//
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
@@ -146,21 +146,34 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
+//
 
-
-
+//
         serid=new ArrayList<String>();
         service=new ArrayList<String>();
         seramount=new ArrayList<String>();
-        for(int i=0;i<worckshop.selecteditems.size();i++){
-            serid.add(worckshop.id.get(Integer.parseInt(worckshop.selecteditems.get(i))));
+        try {
+
+
+            for (int i = 0; i < worckshop.selecteditems.size(); i++) {
+//                Toast.makeText(getApplicationContext(),worckshop.id.get(Integer.parseInt(worckshop.selecteditems.get(i)))+worckshop.service.get(Integer.parseInt(worckshop.selecteditems.get(i)))+worckshop.seramount.get(Integer.parseInt(worckshop.selecteditems.get(i))),Toast.LENGTH_LONG).show();
+
+
+//
+            serid.add(worckshop.serid.get(Integer.parseInt(worckshop.selecteditems.get(i))));
             service.add(worckshop.service.get(Integer.parseInt(worckshop.selecteditems.get(i))));
             seramount.add(worckshop.seramount.get(Integer.parseInt(worckshop.selecteditems.get(i))));
-            services=services+"#"+worckshop.id.get(Integer.parseInt(worckshop.selecteditems.get(i)));
+            services=services+"#"+worckshop.serid.get(Integer.parseInt(worckshop.selecteditems.get(i)));
             amount_place=amount_place+"#"+worckshop.seramount.get(Integer.parseInt(worckshop.selecteditems.get(i)));
 
+            }
+            lvs.setAdapter(new Custome_checkout(getApplicationContext(), serid,service,seramount));
+
         }
-        lvs.setAdapter(new Custome_checkout(getApplicationContext(), serid,service,seramount));
+        catch (Exception ex)
+        {
+            Toast.makeText(getApplicationContext(),ex.getMessage().toString(),Toast.LENGTH_LONG).show();
+        }
 
 
     }
@@ -225,6 +238,10 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
+
+
+        Intent in = new Intent(getApplicationContext(), order_history.class);
+        startActivity(in);
 
     }
 }

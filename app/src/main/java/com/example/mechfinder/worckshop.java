@@ -1,6 +1,8 @@
 package com.example.mechfinder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -33,6 +35,11 @@ import java.util.Map;
 
 public class worckshop extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
     LinearLayout linearLayout;
+    RecyclerView rv;
+
+    ArrayList<String> photo;
+
+
     TextView name,amount,place,city,district,email,phone;
     TableRow tableRow,tableRow2;
     ListView listView;
@@ -49,7 +56,7 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_worckshop);
-        linearLayout=(LinearLayout)findViewById(R.id.lvs);
+        linearLayout=(LinearLayout)findViewById(R.id.listv2);
         name=(TextView)findViewById(R.id.textView);
         amount=(TextView)findViewById(R.id.amount);
         tableRow=(TableRow)findViewById(R.id.tableRow);
@@ -62,6 +69,10 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
         district=(TextView)findViewById(R.id.textView10);
         email=(TextView)findViewById(R.id.textView12);
         phone=(TextView)findViewById(R.id.textView13);
+        rv=(RecyclerView)findViewById(R.id.rv);
+
+
+
 
 
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
@@ -90,6 +101,43 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
                         // response
                         try {
                             JSONObject jsonObj = new JSONObject(response);
+                            String status=jsonObj.getString("gall_status");
+                            if(status.equalsIgnoreCase("ok"))
+                            {
+                                JSONArray ja= jsonObj.getJSONArray("gall_data");
+                                photo=new ArrayList<>();
+//                                nid=new ArrayList<>();
+//                                title=new ArrayList<>();
+//                                image=new ArrayList<>();
+//                                date=new ArrayList<>();
+//                                des=new ArrayList<>();
+
+
+                                for ( int i=0;i< ja.length(); i++)
+                                {
+                                    JSONObject jd= ja.getJSONObject(i);
+                                    photo.add(jd.getString(("image")));
+
+
+//                                    nid.add(jd.getString("news_id"));
+//                                    title.add(jd.getString("news_title"));
+//                                    image.add(jd.getString("image"));
+//                                    date.add(jd.getString("date"));
+//                                    des.add(jd.getString("news_description"));
+
+                                }
+                                LinearLayoutManager layoutManager= new LinearLayoutManager(worckshop.this, LinearLayoutManager.HORIZONTAL, false);
+                                rv.setLayoutManager(layoutManager);
+                                rv.setAdapter(new gallery(getApplicationContext(),photo));
+
+                            }
+
+
+
+
+
+
+
                             String statu_shop=jsonObj.getString("shop_status");
                             Toast.makeText(getApplicationContext(), "h"+statu_shop, Toast.LENGTH_LONG).show();
 
@@ -116,8 +164,8 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
 //                                district.setText(mm.getString("district"));
                             }
 
-                            String status=jsonObj.getString("gall_status");
-                            if(status.equalsIgnoreCase("1")){
+                            String statusa=jsonObj.getString("gall_status");
+                            if(statusa.equalsIgnoreCase("1")){
                                 JSONArray ja= jsonObj.getJSONArray("gall_data");
                                 id=new ArrayList<>();
                                 image=new ArrayList<>();
@@ -142,7 +190,7 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
                                     seramount.add(jd.getString("amount"));
                                     if(alreadySelected.equalsIgnoreCase(jd.getString("service"))){
                                         selecteditems.add(i+"");
-//                                        Toast.makeText(worckshop.this, "matching=="+i, Toast.LENGTH_SHORT).show();
+
                                         totalAmount=totalAmount+Integer.parseInt(jd.getString("amount"));
                                         amount.setText(totalAmount+"");
                                     }
@@ -154,8 +202,7 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
 
                                    listView.getChildAt(Integer.parseInt(selecteditems.get(0))).setBackgroundColor(Color.GREEN);
                                }
-//                                ArrayAdapter<String>ad=new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1,service,);
-//                                listView.setAdapter(ad);
+
 
 
                             }
@@ -203,11 +250,22 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
             startActivity(in);
         }
         else if(checkout==v){
+            sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
             SharedPreferences.Editor edt=sh.edit();
             edt.putString("totalamount",totalAmount+"");
             edt.commit();
-            Intent in=new Intent(getApplicationContext(),checkout.class);
-            startActivity(in);
+
+            if(selecteditems.size()>0) {
+
+                for(int m=0;m<selecteditems.size();m++)
+                {
+                    Toast.makeText(getApplicationContext(),selecteditems.get(m),Toast.LENGTH_LONG).show();
+                }
+
+
+                Intent in = new Intent(getApplicationContext(), checkout.class);
+                startActivity(in);
+            }
 
 
 
@@ -231,13 +289,7 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
             totalAmount=totalAmount+Integer.parseInt(seramount.get(position));
             amount.setText(totalAmount+"");
         }
-//        for (int i = 0; i < listView.getChildCount(); i++) {
-//            if(position == i ){
-//                listView.getChildAt(i).setBackgroundColor(Color.GREEN);
-//            }else{
-//                listView.getChildAt(i).setBackgroundColor(Color.TRANSPARENT);
-//            }
-//        }
+
 
     }
 }
