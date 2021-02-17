@@ -76,7 +76,7 @@ public class Custome_homeservice extends BaseAdapter implements View.OnClickList
         TextView tvplace=(TextView)gridView.findViewById(R.id.textView8);
         TextView tvphone=(TextView)gridView.findViewById(R.id.textView9);
         TextView tvamount=(TextView)gridView.findViewById(R.id.textView27);
-        Button go=(Button)gridView.findViewById(R.id.button2);
+        ImageView go=(ImageView)gridView.findViewById(R.id.button2);
 
         tvshopname.setText(shop_name.get(i));
         tvplace.setText(place.get(i));

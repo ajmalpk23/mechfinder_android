@@ -10,6 +10,7 @@ import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class vehicle extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
-    ImageButton add;
+    ImageView add;
     ListView lvs;
     BottomNavigationView bottomNavigationView;
     SharedPreferences sh;
@@ -41,7 +42,7 @@ public class vehicle extends AppCompatActivity implements BottomNavigationView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vehicle);
-        add=(ImageButton)findViewById(R.id.add);
+        add=(ImageView)findViewById(R.id.add);
         lvs=(ListView)findViewById(R.id.listv2);
         bottomNavigationView=(BottomNavigationView)findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setItemIconTintList(null);

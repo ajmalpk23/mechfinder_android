@@ -82,7 +82,7 @@ import javax.microedition.khronos.egl.EGLDisplay;
 public class registration extends AppCompatActivity implements View.OnClickListener {
     EditText name,password,conpassword,email,phone;
     ImageView userimage;
-    ImageButton next;
+    Button next;
     SharedPreferences sh;
     String url="";
     private final static int ALL_PERMISSIONS_RESULT = 107;
@@ -104,7 +104,7 @@ public class registration extends AppCompatActivity implements View.OnClickListe
         conpassword=(EditText)findViewById(R.id.conpassword);
         email=(EditText)findViewById(R.id.email);
         phone=(EditText)findViewById(R.id.phone);
-        next=(ImageButton)findViewById(R.id.next);
+        next=(Button) findViewById(R.id.next);
         userimage=(ImageView)findViewById(R.id.userimage);
 
 

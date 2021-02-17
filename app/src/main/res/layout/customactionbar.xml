@@ -11,20 +11,22 @@
         android:layout_width = "0dp"
         android:layout_height = "match_parent"
         android:layout_weight = "0.6">
+
         <ImageView
-            android:layout_width = "20dp"
-            android:layout_height = "20dp"
-            android:src = "@drawable/water" />
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/map" />
+
         <TextView
-            android:id = "@+id/name"
-            android:layout_width = "150dp"
-            android:layout_height = "20dp"
-            android:layout_marginLeft = "10dp"
-            android:text = "Instagram"
-            android:textSize = "20sp"
-            android:textColor = "#000"
-            android:textStyle = "bold"
-           />
+            android:id="@+id/name"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:text="Instagram"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width = "0dp"
@@ -35,8 +37,8 @@
 
         <ImageView
             android:id="@+id/vehpic"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:src="@drawable/water" />
 
         <ImageView
@@ -44,6 +46,6 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/water" />
+            android:src="@drawable/notification" />
     </LinearLayout>
 </LinearLayout>

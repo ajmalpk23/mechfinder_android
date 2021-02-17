@@ -2,10 +2,13 @@ package com.example.mechfinder;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,14 +28,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class orderhistory_pending extends AppCompatActivity {
+public class orderhistory_pending extends AppCompatActivity implements View.OnClickListener {
     SharedPreferences sh;
     String url="";
     TextView shopname,place,city,username,vehicle_compnay,vehicle_model,vehicle_regno,email,phone,totalamount1;
-    Button chat;
+    ImageView chat;
     ArrayList<String> service_id,service,seramount;
     ListView listv2;
-    String service_requestid;
+    String service_requestid,shop_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,13 +53,12 @@ public class orderhistory_pending extends AppCompatActivity {
         email=(TextView)findViewById(R.id.textView36);
         phone=(TextView)findViewById(R.id.textView37);
         totalamount1=(TextView)findViewById(R.id.textView38);
-        chat=(Button) findViewById(R.id.chat111);
+        chat=(ImageView) findViewById(R.id.chat111);
 
 
 
         service_requestid=getIntent().getStringExtra("srid");
-
-
+        chat.setOnClickListener(this);
 
 
 
@@ -93,6 +95,7 @@ public class orderhistory_pending extends AppCompatActivity {
                                 vehicle_model.setText(mm.getString("model"));
                                 vehicle_regno.setText(mm.getString("regno"));
                                 totalamount1.setText(mm.getString("payment"));
+                                shop_id=(mm.getString("workshop_id"));
 
 //                                String shop_name1=jsonObj.getString("shop_name");
 //                                String email1=jsonObj.getString("email");
@@ -198,4 +201,10 @@ public class orderhistory_pending extends AppCompatActivity {
         requestQueue.add(postRequest);
     }
 
+    @Override
+    public void onClick(View v) {
+        Intent in = new Intent(getApplicationContext(), Chat.class);
+        in.putExtra("shop_id",shop_id);
+        startActivity(in);
+    }
 }

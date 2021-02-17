@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
@@ -38,7 +39,7 @@ import java.util.Map;
 public class upi extends AppCompatActivity {
 
     EditText amount, note, name, upivirtualid;
-    Button send;
+    ImageView send;
     String TAG ="main",l_id,p_id,am,qnt,am1,srid,username,payment;
     final int UPI_PAYMENT = 0;
     SharedPreferences sh;
@@ -50,7 +51,7 @@ public class upi extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upi_pay);
 
-        send = (Button) findViewById(R.id.send);
+        send = (ImageView) findViewById(R.id.send);
         amount = (EditText)findViewById(R.id.amount_et);
         note = (EditText)findViewById(R.id.note);
         name = (EditText) findViewById(R.id.name);

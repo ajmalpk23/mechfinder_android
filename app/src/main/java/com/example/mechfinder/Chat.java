@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -41,12 +42,12 @@ public class Chat extends AppCompatActivity {
 
     MessagesAdapter adapterMessages;
     ListView listMessages;
-    Button bt1;
+    ImageView bt1;
     EditText edtxttosent;
     Handler hnd;
     Runnable ad;
     SharedPreferences sh;
-    String url="",url1="",lid,toid;
+    String url="",url1="",lid,toid,shop_id;
     String lastid;
     ArrayList<String> chatid,fromid,message,date;
 
@@ -57,11 +58,14 @@ public class Chat extends AppCompatActivity {
 
         hnd=new Handler();
         listMessages= (ListView)findViewById(R.id.list_chat);
-        bt1= (Button) findViewById(R.id.button_chat_send);
+        bt1= (ImageView) findViewById(R.id.button_chat_send);
         adapterMessages = new MessagesAdapter(Chat.this);
         edtxttosent=(EditText)findViewById(R.id.input_chat_message);
         listMessages.setTranscriptMode(ListView.TRANSCRIPT_MODE_ALWAYS_SCROLL);
         listMessages.setStackFromBottom(true);
+
+
+        shop_id=getIntent().getStringExtra("shop_id");
 
 
 
@@ -140,7 +144,7 @@ public class Chat extends AppCompatActivity {
 
                             params.put("lid",sh.getString("lid",""));
                             params.put("message",msggg);
-                            params.put("shop_id",sh.getString("shop_id",""));
+                            params.put("shop_id",shop_id);
 
 //
 //                            params.put("username",userName);
@@ -245,7 +249,7 @@ public class Chat extends AppCompatActivity {
 
                         params.put("lid",sh.getString("lid",""));
 
-                        params.put("shop_id",sh.getString("shop_id",""));
+                        params.put("shop_id",shop_id);
                         params.put("lastid",lastid);
 
 

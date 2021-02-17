@@ -64,7 +64,8 @@ public class profile_personal extends AppCompatActivity implements View.OnClickL
     ImageView imageView;
     EditText name,phone,email;
 
-    Button save,location;
+    Button save;
+    ImageView location;
     SharedPreferences sh;
     String url1="",url2="",url3="";
     private final static int ALL_PERMISSIONS_RESULT = 107;
@@ -87,7 +88,7 @@ public class profile_personal extends AppCompatActivity implements View.OnClickL
         email=(EditText) findViewById(R.id.email);
         phone=(EditText) findViewById(R.id.phone);
         save=(Button)findViewById(R.id.save);
-        location=(Button)findViewById(R.id.location);
+        location=(ImageView) findViewById(R.id.location);
 
         save.setOnClickListener(this);
 

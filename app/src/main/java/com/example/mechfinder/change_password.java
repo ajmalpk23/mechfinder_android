@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -25,7 +26,7 @@ import java.util.Map;
 
 public class change_password extends AppCompatActivity implements View.OnClickListener {
     EditText cupass,newpass,conpass;
-    Button changepass;
+    ImageView changepass;
     SharedPreferences sh;
     String url="";
 
@@ -36,7 +37,7 @@ public class change_password extends AppCompatActivity implements View.OnClickLi
         cupass=(EditText)findViewById(R.id.cupass);
         newpass=(EditText)findViewById(R.id.newpass);
         conpass=(EditText)findViewById(R.id.conpass);
-        changepass=(Button)findViewById(R.id.changepass);
+        changepass=(ImageView) findViewById(R.id.changepass);
 
         changepass.setOnClickListener(this);
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());

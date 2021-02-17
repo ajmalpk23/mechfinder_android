@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -29,8 +30,8 @@ import java.util.Map;
 
 public class registration_home_ocation extends AppCompatActivity implements View.OnClickListener {
     EditText place,city,district,pincode;
-    TextView homeloction;
-    ImageButton next;
+
+    Button next;
     SharedPreferences sh;
     String url="";
     String lid="";
@@ -44,8 +45,8 @@ public class registration_home_ocation extends AppCompatActivity implements View
         city=(EditText)findViewById(R.id.city);
         district=(EditText)findViewById(R.id.district);
         pincode=(EditText)findViewById(R.id.pincode);
-        homeloction=(TextView)findViewById(R.id.homelocation);
-        next=(ImageButton)findViewById(R.id.next);
+
+        next=(Button) findViewById(R.id.next);
         lid=getIntent().getStringExtra("lid");
 
         next.setOnClickListener(this);
@@ -117,7 +118,7 @@ public class registration_home_ocation extends AppCompatActivity implements View
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
 
-        Intent in=new Intent(getApplicationContext(),Registration_vehicle.class);
+        Intent in=new Intent(getApplicationContext(),Login.class);
 
         startActivity(in);
     }

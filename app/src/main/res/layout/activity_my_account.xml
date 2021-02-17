@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     tools:context=".my_account">
 
     <TextView
         android:id="@+id/profile"
-        android:layout_width="250dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:text="profile"
+        android:layout_width="245dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical"
+
+        android:text="Profile"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView1"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -20,67 +24,59 @@
         android:id="@+id/orderhistory"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="84dp"
-        android:text="orderhistory"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/profile" />
+        android:layout_marginTop="36dp"
+
+        android:gravity="center_vertical"
+        android:text="Order History"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/appfeedback" />
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="436dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:src="@drawable/log"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="372dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:src="@drawable/pass"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="308dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:src="@drawable/compl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="240dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:src="@drawable/chat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="168dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ord"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnav"
-        android:layout_width="405dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -89,61 +85,66 @@
 
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="48dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="60dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="112dp"
-        android:layout_marginEnd="320dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:layout_width="75dp"
+        android:layout_height="80dp"
+        android:src="@drawable/feed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView1" />
 
     <TextView
         android:id="@+id/chat"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="32dp"
-        android:text="chat"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
+        android:layout_marginTop="40dp"
+        android:gravity="center_vertical"
+        android:text="Chat"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView4"
         app:layout_constraintTop_toBottomOf="@+id/orderhistory" />
 
     <TextView
         android:id="@+id/appfeedback"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:text="app feedback"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
+        android:layout_marginTop="36dp"
+        android:gravity="center_vertical"
+        android:text="App Feedback"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/profile" />
 
     <TextView
         android:id="@+id/complaint"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="160dp"
-        android:text="complaint  support"
+        android:layout_marginTop="32dp"
+        android:gravity="center_vertical"
+        android:text="Complaint  Support"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/appfeedback" />
+        app:layout_constraintTop_toBottomOf="@+id/chat" />
 
     <TextView
         android:id="@+id/changepassword"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        android:text="change password"
+        android:layout_marginTop="36dp"
+        android:gravity="center_vertical"
+        android:text="Change Password"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView6"
         app:layout_constraintTop_toBottomOf="@+id/complaint" />
 
@@ -151,11 +152,12 @@
         android:id="@+id/logout"
         android:layout_width="250dp"
         android:layout_height="44dp"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="12dp"
-        android:text="logout"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView7"
+        android:layout_marginTop="36dp"
+        android:gravity="center_vertical"
+        android:text="Logout"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
         app:layout_constraintTop_toBottomOf="@+id/changepassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

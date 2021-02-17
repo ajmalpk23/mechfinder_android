@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class orderhistory_approved extends AppCompatActivity {
     SharedPreferences sh;
     String url="";
     TextView shopname,place,city,username,vehicle_compnay,vehicle_model,vehicle_regno,email,phone,totalamount1,discount,parts;
-    Button pay,chat;
+    ImageView pay;
     ArrayList<String> service_id,service,seramount;
     ListView listv2;
     String service_requestid;
@@ -56,8 +57,8 @@ public class orderhistory_approved extends AppCompatActivity {
         email=(TextView)findViewById(R.id.textView36);
         phone=(TextView)findViewById(R.id.textView37);
         totalamount1=(TextView)findViewById(R.id.textView38);
-        pay=(Button) findViewById(R.id.lll);
-        chat=(Button) findViewById(R.id.button5);
+        pay=(ImageView) findViewById(R.id.lll);
+     
 
 
 

@@ -112,7 +112,7 @@ public class Registration_vehicle extends AppCompatActivity implements View.OnCl
     Spinner type,model,company;
     EditText regno,year;
     ImageView imageView;
-    ImageButton next;
+    ImageView next;
     TextView skip;
     SharedPreferences sh;
     String url="",url1="",url2="",url3="";
@@ -140,7 +140,7 @@ public class Registration_vehicle extends AppCompatActivity implements View.OnCl
         regno=(EditText)findViewById(R.id.regno);
         year=(EditText)findViewById(R.id.year);
         imageView=(ImageView)findViewById(R.id.imageView2);
-        next=(ImageButton)findViewById(R.id.imageButton);
+        next=(ImageView) findViewById(R.id.imageButton);
         skip=(TextView)findViewById(R.id.skip);
 
         lid=getIntent().getStringExtra("lid");

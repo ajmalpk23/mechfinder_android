@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,7 +30,7 @@ import java.util.Map;
 public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText username,password;
     TextView forgot_password,singup;
-    Button login;
+    ImageView login;
     SharedPreferences sh;
     String url="";
 
@@ -40,7 +41,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.activity_login);
         username=(EditText)findViewById(R.id.name);
         password=(EditText)findViewById(R.id.password);
-        login=(Button)findViewById(R.id.login);
+        login=(ImageView) findViewById(R.id.login);
         forgot_password=(TextView)findViewById(R.id.forgot_password);
         singup=(TextView)findViewById(R.id.singup);
 
@@ -49,6 +50,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
         login.setOnClickListener(this);
         singup.setOnClickListener(this);
+        forgot_password.setOnClickListener(this);
 
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url=sh.getString("url","")+"and_login";
@@ -78,9 +80,15 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                                 SharedPreferences.Editor edt=sh.edit();
                                 edt.putString("lid",lid);
                                 edt.commit();
+                                Intent ss=new Intent(getApplicationContext(),notiservise.class);
+                                startService(ss);
 
                                 Intent in=new Intent(getApplicationContext(),home.class);
                                 startActivity(in);
+
+
+
+
                                 Intent in2=new Intent(getApplicationContext(),LocationService.class);
                                 startService(in2);
                                 String aaa=LocationService.lati;
@@ -133,6 +141,14 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
             startActivity(in);
             Toast.makeText(this, "profile personal", Toast.LENGTH_SHORT).show();
         }
+    else  if(forgot_password==v){
+        Intent in = new Intent(getApplicationContext(), forgot_password.class);
+        startActivity(in);
+
+    }
+
+
+
 
 
 

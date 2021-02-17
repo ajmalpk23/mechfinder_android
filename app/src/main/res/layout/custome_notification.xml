@@ -3,20 +3,24 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/textView24"
             android:layout_width="176dp"
-            android:layout_height="21dp"
-            android:layout_marginTop="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:text="subject"
+            android:textColor="#000"
+            android:textSize="13dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintHorizontal_bias="0.068"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,28 +29,40 @@
             android:layout_width="73dp"
             android:layout_height="19dp"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="3dp"
             android:text="date"
+            android:textSize="7dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
         <TextView
+
+
             android:id="@+id/textView26"
-            android:layout_width="wrap_content"
+            android:layout_width="207dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="32dp"
+
+            android:layout_marginTop="7dp"
+            android:paddingStart="8dp"
+
+            android:paddingEnd="8dp"
+
             android:text="discription"
+            android:paddingRight="12dp"
+
+            android:textSize="9dp"
+            app:layout_constraintEnd_toStartOf="@+id/imageView11"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
         <ImageView
             android:id="@+id/imageView11"
-            android:layout_width="140dp"
-            android:layout_height="79dp"
-            android:layout_marginStart="128dp"
-            android:layout_marginTop="56dp"
-            app:layout_constraintStart_toEndOf="@+id/textView25"
+            android:layout_width="145dp"
+            android:layout_height="107dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars" />
     </androidx.constraintlayout.widget.ConstraintLayout>

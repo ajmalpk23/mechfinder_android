@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.Toast;
 
@@ -26,7 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class add_review extends AppCompatActivity implements View.OnClickListener {
-    Button send;
+    ImageView send;
     RatingBar rating;
     EditText feedback;
     SharedPreferences sh;
@@ -36,7 +37,7 @@ public class add_review extends AppCompatActivity implements View.OnClickListene
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_review);
-        send=(Button)findViewById(R.id.button6);
+        send=(ImageView) findViewById(R.id.button6);
         rating=(RatingBar)findViewById(R.id.ratingBar2);
         feedback=(EditText)findViewById(R.id.editTextTextMultiLine);
 

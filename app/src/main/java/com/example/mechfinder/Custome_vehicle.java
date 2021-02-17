@@ -94,8 +94,8 @@ public class Custome_vehicle extends BaseAdapter {
         TextView tvmanf=(TextView)gridView.findViewById(R.id.textView22);
         TextView tv1reno=(TextView)gridView.findViewById(R.id.textView23);
         ImageView tvimage=(ImageView)gridView.findViewById(R.id.imageView10);
-        Button tvbuttn=(Button)gridView.findViewById(R.id.buttn);
-        Button tvbuttn2=(Button)gridView.findViewById(R.id.button7);
+        ImageView tvbuttn=(ImageView)gridView.findViewById(R.id.buttn);
+        ImageView tvbuttn2=(ImageView)gridView.findViewById(R.id.button7);
 
         tvcompany.setText(company.get(i));
         tvmodel.setText(model.get(i));

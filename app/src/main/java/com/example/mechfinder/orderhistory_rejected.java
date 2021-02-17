@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,7 +33,7 @@ public class orderhistory_rejected extends AppCompatActivity implements View.OnC
     SharedPreferences sh;
     String url="";
     TextView shopname,place,city,username,vehicle_compnay,vehicle_model,vehicle_regno,email,phone,totalamount1;
-    Button home;
+    ImageView home;
     ArrayList<String> service_id,service,seramount;
     ListView listv2;
     String service_requestid;
@@ -53,7 +54,7 @@ public class orderhistory_rejected extends AppCompatActivity implements View.OnC
         email=(TextView)findViewById(R.id.textView36);
         phone=(TextView)findViewById(R.id.textView37);
         totalamount1=(TextView)findViewById(R.id.textView38);
-        home=(Button) findViewById(R.id.chat111);
+        home=(ImageView) findViewById(R.id.chat111);
 
 
 

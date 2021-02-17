@@ -112,7 +112,7 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
 
         }
         else if(chat1==v){
-            Intent in=new Intent(getApplicationContext(),Chat.class);
+            Intent in=new Intent(getApplicationContext(),user_chat.class);
             startActivity(in);
 
 

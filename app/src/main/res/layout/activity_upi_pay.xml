@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fff"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".upi"
     android:orientation="vertical">
@@ -11,81 +12,88 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:gravity="center"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
-        <TextView
+        <ImageView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:src="@drawable/upi"
+
             android:text="UPI"
             android:textAlignment="center"
-            android:textSize="30dp"/>
+            android:textSize="30dp" />
     </LinearLayout>
 
 
-
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Name"
-        android:drawablePadding="8dp"
-        android:textSize="18sp"
-        android:clickable="false"
-        android:focusable="false"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="25dp"
         android:id="@+id/name"
-        />
+        android:layout_width="323dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/rounded_border_edittext"
+        android:clickable="false"
+        android:drawablePadding="8dp"
+        android:focusable="false"
+        android:hint="Name"
+        android:textSize="18sp" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:clickable="false"
-        android:focusable="false"
-        android:drawablePadding="8dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:id="@+id/upi_id"
-        android:hint="your upid"/>
+        android:layout_width="323dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:clickable="true"
+        android:drawablePadding="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/rounded_border_edittext"
+        android:focusable="false"
+        android:hint="your upid"
+        android:textSize="18sp" />
 
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Amount"
-        android:textSize="18sp"
-        android:drawablePadding="8dp"
-        android:clickable="false"
-        android:focusable="false"
+        android:id="@+id/amount_et"
+        android:layout_width="323dp"
+        android:layout_height="36dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:id="@+id/amount_et"
+        android:background="@drawable/rounded_border_edittext"
+        android:clickable="false"
+        android:drawablePadding="8dp"
+        android:focusable="false"
+        android:hint="Amount"
+        android:layout_marginTop="8dp"
         android:inputType="numberDecimal"
-        />
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/note"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="323dp"
+        android:layout_height="36dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:clickable="true"
         android:focusable="true"
+        android:background="@drawable/rounded_border_edittext"
         android:hint="What's this for ?"
-        android:textSize="18sp"
-        android:text="CAFETERIA PAYMENT"/>
+        android:layout_marginTop="8dp"
+        android:textSize="18sp" />
 
-    <Button
-        android:layout_width="150dp"
-        android:layout_marginStart="120dp"
-        android:layout_height="60dp"
+    <ImageView
         android:id="@+id/send"
-        android:textStyle="bold"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="120dp"
         android:layout_marginTop="20dp"
+        android:src="@drawable/pay_btn"
         android:text="Pay Now"
         android:textSize="20sp"
+        android:textStyle="bold"
 
         />
 

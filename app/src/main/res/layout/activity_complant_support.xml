@@ -3,16 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent"
     tools:context=".complant_support">
 
     <LinearLayout
         android:id="@+id/listv2"
-        android:layout_width="402dp"
-        android:layout_height="458dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="403dp"
+        android:layout_height="508dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="39dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.228"
@@ -22,24 +21,37 @@
         <ListView
             android:id="@+id/lv_name"
             android:layout_width="354dp"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="1.0sp"
+            android:scrollbars="none" />
     </LinearLayout>
 
     <EditText
         android:id="@+id/complaint"
-        android:layout_width="372dp"
+        android:layout_width="0dp"
         android:layout_height="145dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/roundtxtarea"
         android:ems="10"
         android:gravity="start|top"
+        android:hint="Complaint and Supprot"
         android:inputType="textMultiLine"
-        app:layout_constraintTop_toBottomOf="@+id/listv2"
-        tools:layout_editor_absoluteX="24dp" />
+        android:paddingLeft="30dp"
+        android:paddingTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listv2" />
 
-    <Button
+    <ImageView
         android:id="@+id/send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/sendred"
         android:text="send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

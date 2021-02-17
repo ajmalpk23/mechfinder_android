@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -25,7 +26,7 @@ import java.util.Map;
 
 public class app_feedback extends AppCompatActivity implements View.OnClickListener {
     EditText feedback;
-    Button button;
+    ImageView button;
     SharedPreferences sh;
     String url="";
 
@@ -34,7 +35,7 @@ public class app_feedback extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_feedback);
         feedback=(EditText)findViewById(R.id.feedback);
-        button=(Button)findViewById(R.id.button);
+        button=(ImageView) findViewById(R.id.button);
 
         button.setOnClickListener(this);
 
@@ -92,5 +93,9 @@ public class app_feedback extends AppCompatActivity implements View.OnClickListe
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
+
+        Toast.makeText(getApplicationContext(), "Feedback Send", Toast.LENGTH_LONG).show();
+
+
     }
 }

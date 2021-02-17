@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,7 +29,7 @@ import java.util.Map;
 
 public class checkout extends AppCompatActivity implements View.OnClickListener {
 //    LinearLayout linearLayout;
-    Button chat,placeorder;
+    ImageView placeorder;
     SharedPreferences sh;
     String url="",url1="";
     TextView name,city,place,phone,email,username,vehicle,totalAmount1;
@@ -36,14 +37,15 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
     ArrayList<String> serid,service,seramount;
     ArrayList<String> selecteditems;
     ListView lvs;
-    String services="",amount_place="";
+    String services="",amount_place="",total;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_checkout);
 //        linearLayout=(LinearLayout)findViewById(R.id.lvs);
-        chat=(Button)findViewById(R.id.chat111);
-        placeorder=(Button)findViewById(R.id.placeorder);
+
+        placeorder=(ImageView) findViewById(R.id.placeorder);
         name=(TextView)findViewById(R.id.textView31);
         city=(TextView)findViewById(R.id.textView33);
         place=(TextView)findViewById(R.id.textView32);
@@ -57,12 +59,14 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
 
 
         placeorder.setOnClickListener(this);
+
+
         sh = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         url=sh.getString("url","")+"and_checkout_invoice";
         url1=sh.getString("url","")+"and_checkout";
 
         totalAmount1.setText(sh.getString("totalamount",""));
-
+        total=sh.getString("totalamount","");
 //
 //
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
@@ -181,16 +185,19 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
     @Override
     public void onClick(View v) {
 
-        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        StringRequest postRequest = new StringRequest(Request.Method.POST, url1,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        //  Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
 
-                        // response
-                        try {
-                            JSONObject jsonObj = new JSONObject(response);
+        if(placeorder==v){
+
+            RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+            StringRequest postRequest = new StringRequest(Request.Method.POST, url1,
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
+                            //  Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+
+                            // response
+                            try {
+                                JSONObject jsonObj = new JSONObject(response);
 //                            String status=jsonObj.getString("add_complaint_status");
 //                            if(status.equalsIgnoreCase("ok")){
 ////                                Toast.makeText(complant_support.this, "success", Toast.LENGTH_SHORT).show();
@@ -200,48 +207,53 @@ public class checkout extends AppCompatActivity implements View.OnClickListener 
 //                            }
 
 
-                        }    catch (Exception e) {
-                            Toast.makeText(getApplicationContext(), "Error" + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                            }    catch (Exception e) {
+                                Toast.makeText(getApplicationContext(), "Error" + e.getMessage().toString(), Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    },
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // error
+                            Toast.makeText(getApplicationContext(), "eeeee" + error.toString(), Toast.LENGTH_SHORT).show();
                         }
                     }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // error
-                        Toast.makeText(getApplicationContext(), "eeeee" + error.toString(), Toast.LENGTH_SHORT).show();
-                    }
-                }
-        ) {
-            @Override
-            protected Map<String, String> getParams() {
+            ) {
+                @Override
+                protected Map<String, String> getParams() {
 
-                Map<String, String> params = new HashMap<>();
+                    Map<String, String> params = new HashMap<>();
 
 //                params.put("complaint",Complaint);
-                params.put("lid",sh.getString("lid",""));
-                params.put("Vid",sh.getString("vid",""));
-                params.put("shop_id",sh.getString("shop_id",""));
-                params.put("servicecs",services);
-                params.put("amount_place",amount_place);
+                    params.put("lid",sh.getString("lid",""));
+                    params.put("Vid",sh.getString("vid",""));
+                    params.put("shop_id",sh.getString("shop_id",""));
+                    params.put("servicecs",services);
+                    params.put("amount_place",amount_place);
+                    params.put("total",total);
 
 
 
-                return params;
-            }
-        };
+                    return params;
+                }
+            };
 
-        int MY_SOCKET_TIMEOUT_MS=100000;
+            int MY_SOCKET_TIMEOUT_MS=100000;
 
-        postRequest.setRetryPolicy(new DefaultRetryPolicy(
-                MY_SOCKET_TIMEOUT_MS,
-                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
-                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        requestQueue.add(postRequest);
+            postRequest.setRetryPolicy(new DefaultRetryPolicy(
+                    MY_SOCKET_TIMEOUT_MS,
+                    DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                    DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+            requestQueue.add(postRequest);
 
 
-        Intent in = new Intent(getApplicationContext(), order_history.class);
-        startActivity(in);
+            Intent in = new Intent(getApplicationContext(), order_history.class);
+            startActivity(in);
+
+        }
+
+
 
     }
 }

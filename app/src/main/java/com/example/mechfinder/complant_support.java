@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,7 +31,7 @@ import java.util.Map;
 public class complant_support extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText complaint;
-    Button send;
+    ImageView send;
     SharedPreferences sh;
     String url1="",url2="";
     ArrayList<String> comp,cdate,reply,rdate;
@@ -40,7 +41,7 @@ public class complant_support extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_complant_support);
         lv=(ListView) findViewById(R.id.lv_name);
         complaint=(EditText)findViewById(R.id.complaint);
-        send=(Button)findViewById(R.id.send);
+        send=(ImageView) findViewById(R.id.send);
 
 
         send.setOnClickListener(this);

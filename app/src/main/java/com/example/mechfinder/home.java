@@ -141,7 +141,7 @@ public class home extends AppCompatActivity implements BottomNavigationView.OnNa
 
 
     }
-    int [] a= new int[] { R.drawable.typing_on_mac,R.drawable.wallpaperflare_com_wallpaper};
+    int [] a= new int[] { R.drawable.one,R.drawable.two,R.drawable.three,R.drawable.four};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

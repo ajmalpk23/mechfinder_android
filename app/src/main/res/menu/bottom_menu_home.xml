@@ -2,13 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title=""
-        android:icon="@drawable/img_6"
+        android:icon="@drawable/lasthome"
+
         android:id="@+id/chat111"/>
     <item android:title=""
-        android:icon="@drawable/img_6"
+        android:icon="@drawable/lastcar"
+
         android:id="@+id/vehicle"/>
     <item android:title=""
+        android:icon="@drawable/lastfeed"
         android:id="@+id/bot"/>
     <item android:title=""
+        android:icon="@drawable/lastpro"
         android:id="@+id/my_account"/>
 </menu>

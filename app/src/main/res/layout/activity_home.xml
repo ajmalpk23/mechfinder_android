@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f2f2f2"
     tools:context=".home">
 
     <LinearLayout
         android:id="@+id/listv2"
-        android:layout_width="411dp"
-        android:layout_height="194dp"
+        android:layout_width="0dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvc"
@@ -26,42 +28,51 @@
 
     <TableRow
         android:id="@+id/tableRow2"
-        android:layout_width="350dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="344dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:background="#ffffff"
+
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listv2">
 
         <ImageView
             android:id="@+id/paintingpic"
-            android:layout_width="98dp"
-            android:layout_height="73dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/paint" />
+            android:paddingTop="10dp"
+
+
+            android:src="@drawable/carpain" />
 
         <ImageView
             android:id="@+id/Batteriespic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="60dp"
+            android:layout_height="80dp"
             android:layout_weight="1"
-            android:src="@drawable/batt" />
+            android:src="@drawable/elect" />
 
         <ImageView
             android:id="@+id/WaterServicepic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
-            android:src="@drawable/water" />
+            android:paddingStart="3dp"
+            android:src="@drawable/waterservice" />
 
         <ImageView
             android:id="@+id/Tyrespic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/tyre" />
+            android:src="@drawable/wheel_care" />
 
     </TableRow>
 
@@ -79,10 +90,12 @@
 
     <TableRow
         android:id="@+id/tableRow3"
-        android:layout_width="398dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="350dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ffffff"
+        android:gravity="center_vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tableRow2">
@@ -91,8 +104,8 @@
             android:id="@+id/painting"
             android:layout_width="87dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
             android:layout_marginTop="4dp"
+            android:paddingRight="4dp"
             android:text="Painting"
             android:textAlignment="center" />
 
@@ -100,16 +113,16 @@
             android:id="@+id/Batteries"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="33dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="4dp"
-            android:text="Batteries"
+            android:text="Electrical Works"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/WaterService"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:text="Water Service"
             android:textAlignment="center" />
@@ -118,7 +131,7 @@
             android:id="@+id/Tyres"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="18dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="4dp"
             android:text="Wheel Care"
             android:textAlignment="center" />
@@ -127,12 +140,14 @@
 
     <TableRow
         android:id="@+id/tableRow6"
-        android:layout_width="350dp"
-        android:layout_height="98dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="344dp"
+        android:layout_height="82dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_weight="1"
+        android:background="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center_vertical"
 
 
         app:layout_constraintStart_toStartOf="parent"
@@ -140,40 +155,41 @@
 
         <ImageView
             android:id="@+id/Lightspic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/light" />
+            android:src="@drawable/periodic_service" />
 
         <ImageView
             android:id="@+id/Deatiledpic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/deta" />
+            android:src="@drawable/deatiled_service" />
 
         <ImageView
             android:id="@+id/Accessoriespic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
             android:src="@drawable/acc" />
 
         <ImageView
             android:id="@+id/Windsheidspic"
-            android:layout_width="75dp"
-            android:layout_height="88dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/oil" />
+            android:src="@drawable/polution_sertificate" />
     </TableRow>
 
     <TableRow
 
         android:id="@+id/tableRow5"
-        android:layout_width="419dp"
-        android:layout_height="64dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="344dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
@@ -183,25 +199,25 @@
             android:id="@+id/Lights"
             android:layout_width="88dp"
             android:layout_height="42dp"
-            android:layout_marginStart="2dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
-            android:text="Lights and Fitments"
+            android:text="Periodic Service"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/Deatiled"
             android:layout_width="89dp"
             android:layout_height="50dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="4dp"
-            android:text="Deatiled  Service"
+            android:text="Deatiled Service"
             android:textAlignment="center" />
 
         <TextView
             android:id="@+id/Accessories"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
+            android:layout_marginStart="5dp"
             android:layout_marginTop="4dp"
             android:text="Accessories"
             android:textAlignment="center" />
@@ -212,19 +228,23 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="6dp"
             android:layout_marginTop="4dp"
-            android:text="oil service"
+            android:text="Polution Certificate"
             android:textAlignment="center" />
     </TableRow>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:layout_marginEnd="6dp"
+        android:layout_height="199dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+
+        android:layout_marginBottom="8dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/bttomnavigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/tableRow5">
 
         <androidx.recyclerview.widget.RecyclerView

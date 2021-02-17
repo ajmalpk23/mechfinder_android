@@ -192,7 +192,7 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
                                         selecteditems.add(i+"");
 
                                         totalAmount=totalAmount+Integer.parseInt(jd.getString("amount"));
-                                        amount.setText(totalAmount+"");
+                                        amount.setText(totalAmount+" /-");
                                     }
 
                                 }

@@ -1,12 +1,22 @@
 package com.example.mechfinder;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.FileProvider;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,8 +32,13 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class orderhistory_success extends AppCompatActivity {
@@ -31,10 +46,11 @@ public class orderhistory_success extends AppCompatActivity {
     SharedPreferences sh;
     String url="";
     TextView shopname,place,city,username,vehicle_compnay,vehicle_model,vehicle_regno,email,phone,totalamount1,discount,parts;
-    Button download;
+    ImageView download;
     ArrayList<String> service_id,service,seramount;
     ListView listv2;
     String service_requestid;
+    ConstraintLayout cn_download;
 
 
     @Override
@@ -55,7 +71,8 @@ public class orderhistory_success extends AppCompatActivity {
         email=(TextView)findViewById(R.id.textView36);
         phone=(TextView)findViewById(R.id.textView37);
         totalamount1=(TextView)findViewById(R.id.textView38);
-        download=(Button) findViewById(R.id.button4);
+        download=(ImageView) findViewById(R.id.button4);
+        cn_download=(ConstraintLayout)findViewById(R.id.to_download);
 
 
 
@@ -205,6 +222,58 @@ public class orderhistory_success extends AppCompatActivity {
                 DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(postRequest);
+
+        download.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bitmap bn=viewToBitmap(cn_download);
+                try {
+                    File getImage = getExternalFilesDir("");
+                    File f=new File(getImage.getPath(),  service_requestid+".jpeg");
+                    FileOutputStream output = new FileOutputStream(f);
+                    bn.compress(Bitmap.CompressFormat.PNG, 100, output);
+                    output.close();
+                    Toast.makeText(orderhistory_success.this, "success", Toast.LENGTH_SHORT).show();
+                    viewGallery(f);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                    Toast.makeText(orderhistory_success.this, e.toString(), Toast.LENGTH_SHORT).show();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    Toast.makeText(orderhistory_success.this, e.toString(), Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
+    public Bitmap viewToBitmap(View view) {
+        Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        view.draw(canvas);
+        return bitmap;
+    }
+    private void viewGallery(File file) {
+
+        Uri mImageCaptureUri = FileProvider.getUriForFile(
+                getApplicationContext(),
+                getApplicationContext().getApplicationContext()
+                        .getPackageName() + ".provider", file);
+
+        Intent view = new Intent();
+        view.setAction(Intent.ACTION_VIEW);
+        view.setData(mImageCaptureUri);
+        List<ResolveInfo> resInfoList =
+                getApplicationContext().getPackageManager()
+                        .queryIntentActivities(view, PackageManager.MATCH_DEFAULT_ONLY);
+        for (ResolveInfo resolveInfo: resInfoList) {
+            String packageName = resolveInfo.activityInfo.packageName;
+            getApplicationContext().grantUriPermission(packageName, mImageCaptureUri, Intent.FLAG_GRANT_WRITE_URI_PERMISSION | Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        }
+        view.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.setDataAndType(mImageCaptureUri, "image/*");
+        getApplicationContext().startActivity(intent);
+    }
 }
