@@ -9,17 +9,18 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 public class saveip extends AppCompatActivity implements View.OnClickListener {
     EditText ip;
-    Button save;
+    ImageView save;
     SharedPreferences sh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saveip);
         ip=(EditText)findViewById(R.id.ip);
-        save=(Button)findViewById(R.id.save);
+        save=(ImageView) findViewById(R.id.save);
 
         sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         ip.setText(sh.getString("ip",""));

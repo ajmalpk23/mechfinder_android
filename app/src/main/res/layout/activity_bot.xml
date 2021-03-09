@@ -8,17 +8,185 @@
 
     <LinearLayout
         android:id="@+id/listv2"
-        android:layout_width="408dp"
-        android:layout_height="614dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="28dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="365dp"
+        android:layout_height="673dp"
+        android:layout_marginStart="16dp"
 
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomnav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/tab1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ListView
+                android:id="@+id/list_chat"
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:divider="@null"
+                android:scrollbars="none"></ListView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/rounded_border_edittext"
+                android:layout_marginBottom="10dp"
+
+
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginEnd="10dp"
+
+                    android:orientation="horizontal"
+                    android:paddingStart="5dp"
+                    android:paddingRight="5dp">
+
+                    <TextView
+                        android:id="@+id/tv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingRight="5dp"
+
+                        android:text="Tire Pressure"
+
+
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Transmission Fluid"
+
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Car services"
+                        android:textColor="#000"
+
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Engine overheat"
+
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Mileage"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Air filter"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Wheel alignment"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Vehicle maintenance"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Life of a tire"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/tv10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Brake failure"
+                        android:textColor="#000"
+                        android:textSize="15sp" />
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="16dp"
+
+                >
+
+                <EditText
+                    android:id="@+id/input_chat_message"
+                    android:layout_width="368dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_border_edittext"
+                    android:ems="10">
+
+                    <requestFocus />
+                </EditText>
+
+                <ImageView
+                    android:id="@+id/button_chat_send"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:paddingRight="8dp"
+                    android:src="@drawable/sendred"
+                    android:text="SENT" />
+
+            </LinearLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,10 +195,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listv2"
-        app:menu="@menu/bottom_menu_home"
-        app:layout_constraintVertical_bias="1.0" />
+        app:menu="@menu/bottom_menu_home" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

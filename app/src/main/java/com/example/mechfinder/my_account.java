@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -103,6 +105,10 @@ public class my_account extends AppCompatActivity implements BottomNavigationVie
             Toast.makeText(this, "change passwoord", Toast.LENGTH_SHORT).show();
         }
         else if(logout==v){
+            SharedPreferences sh= PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+            SharedPreferences.Editor edt=sh.edit();
+            edt.remove("vid");
+            edt.commit();
             Intent in=new Intent(getApplicationContext(),Login.class);
             startActivity(in);
         }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -139,67 +140,89 @@ public class registration extends AppCompatActivity implements View.OnClickListe
             final String Email = email.getText().toString();
             final String Phone = phone.getText().toString();
 
+            int flag=0;
+            if(userName.equalsIgnoreCase("")){
+                name.setError("enter name");
+                flag++;
+            }
+            if(!Patterns.EMAIL_ADDRESS.matcher(Email).matches()){
+                email.setError("enter email");
+                flag++;
+            }
+            if(!Patterns.PHONE.matcher(Phone).matches()){
+                phone.setError("enter valid phone");
+                flag++;
+            }
+            if(Password.length()<6)
+            {
+                password.setError("minimum 6");
+                flag++;
+            }
+            if(!Password.equals(conPass)){
+                conpassword.setError("not matching");
+                flag++;
+            }
 
 
+            if(flag==0) {
 
-            ProgressDialog pd=new ProgressDialog(registration.this);
-            pd.setMessage("Uploading....");
-            pd.show();
-            VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, url,
-                    new Response.Listener<NetworkResponse>() {
-                        @Override
-                        public void onResponse(NetworkResponse response) {
-                            try {
-                                pd.dismiss();
-                                JSONObject obj = new JSONObject(new String(response.data));
-                                String status=obj.getString("status");
-                                if(status.equalsIgnoreCase("ok")){
-                                    Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
-                                    Intent in=new Intent(getApplicationContext(),registration_home_ocation.class);
-                                    in.putExtra("lid",obj.getString("lid"));
-                                    startActivity(in);
+                ProgressDialog pd = new ProgressDialog(registration.this);
+                pd.setMessage("Uploading....");
+                pd.show();
+                VolleyMultipartRequest volleyMultipartRequest = new VolleyMultipartRequest(Request.Method.POST, url,
+                        new Response.Listener<NetworkResponse>() {
+                            @Override
+                            public void onResponse(NetworkResponse response) {
+                                try {
+                                    pd.dismiss();
+                                    JSONObject obj = new JSONObject(new String(response.data));
+                                    String status = obj.getString("status");
+                                    if (status.equalsIgnoreCase("ok")) {
+                                        Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+                                        Intent in = new Intent(getApplicationContext(), registration_home_ocation.class);
+                                        in.putExtra("lid", obj.getString("lid"));
+                                        startActivity(in);
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
                                 }
-                                else{
-                                    Toast.makeText(getApplicationContext(), "failed", Toast.LENGTH_SHORT).show();
-                                }
-
-                            } catch (JSONException e) {
-                                e.printStackTrace();
                             }
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }) {
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }) {
 
 
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<>();
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String, String> params = new HashMap<>();
 
-                    params.put("name", userName);
-                    params.put("password", Password);
-                    params.put("email", Email);
-                    params.put("phone", Phone);
+                        params.put("name", userName);
+                        params.put("password", Password);
+                        params.put("email", Email);
+                        params.put("phone", Phone);
 
-                    return params;
-                }
+                        return params;
+                    }
 
 
-                @Override
-                protected Map<String, DataPart> getByteData() {
-                    Map<String, DataPart> params = new HashMap<>();
-                    long imagename = System.currentTimeMillis();
-                    params.put("fileField", new DataPart(imagename + ".png", imageBytes));
-                    return params;
-                }
-            };
+                    @Override
+                    protected Map<String, DataPart> getByteData() {
+                        Map<String, DataPart> params = new HashMap<>();
+                        long imagename = System.currentTimeMillis();
+                        params.put("fileField", new DataPart(imagename + ".png", imageBytes));
+                        return params;
+                    }
+                };
 
-            Volley.newRequestQueue(this).add(volleyMultipartRequest);
-
+                Volley.newRequestQueue(this).add(volleyMultipartRequest);
+            }
         }
 
     }

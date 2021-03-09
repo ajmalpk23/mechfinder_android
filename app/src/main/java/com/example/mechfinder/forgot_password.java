@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -27,7 +28,7 @@ import java.util.Map;
 public class forgot_password extends AppCompatActivity implements View.OnClickListener {
 
     EditText email;
-    Button send;
+    ImageView send;
     SharedPreferences sh;
     String url="";
 
@@ -37,7 +38,7 @@ public class forgot_password extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_forgot_password);
 
         email=(EditText)findViewById(R.id.editTextTextEmailAddress);
-        send=(Button) findViewById(R.id.button8);
+        send=(ImageView) findViewById(R.id.button8);
 
 
 

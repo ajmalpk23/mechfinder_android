@@ -7,7 +7,6 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -23,56 +22,70 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mechfinder"
         android:usesCleartextTraffic="true">
-        <activity android:name=".user_chat"
+        <activity android:name=".orederhistory_cancel"
+            android:theme="@style/AppTheme.NoTitle"/>
 
-            android:theme="@style/AppTheme.NoTitle"
-            ></activity>
-        <activity android:name=".forgot_password" />
+
+        <activity
+            android:name=".user_chat"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity android:name=".forgot_password"
+            android:theme="@style/AppTheme.NoTitle"/>
         <activity android:name=".home_slide" />
         <activity android:name=".gallery" />
-        <activity android:name=".news"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".add_review"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".orderhistory_proceesing"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".orderhistory_success"
-            android:theme="@style/AppTheme.NoTitle"
-            />
-        <activity android:name=".orderhistory_approved"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".orderhistory_rejected"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".orderhistory_pending"
-            android:theme="@style/AppTheme.NoTitle"/>
+        <activity
+            android:name=".news"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".add_review"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".orderhistory_proceesing"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".orderhistory_success"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".orderhistory_approved"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".orderhistory_rejected"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".orderhistory_pending"
+            android:theme="@style/AppTheme.NoTitle" />
 
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />
 
-        <activity android:name=".complant_support"
-            android:theme="@style/AppTheme.NoTitle"
-            />
-        <activity android:name=".app_feedback"
-            android:theme="@style/AppTheme.NoTitle"/>
+        <activity
+            android:name=".complant_support"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".app_feedback"
+            android:theme="@style/AppTheme.NoTitle" />
         <activity android:name=".invoice" />
-        <activity android:name=".order_history"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".profile_location"
-            android:theme="@style/AppTheme.NoTitle"
-
-            />
-        <activity android:name=".profile_personal"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".checkout"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".notification"
-            android:theme="@style/AppTheme.NoTitle"
-
-            />
-        <activity android:name=".Chat"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".saveip"
+        <activity
+            android:name=".order_history"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".profile_location"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".profile_personal"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".checkout"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".notification"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".Chat"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".saveip"
             android:theme="@style/AppTheme.NoTitle">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -80,39 +93,46 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".reviews"
+        <activity
+            android:name=".reviews"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".worckshop"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".home_services"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".my_account"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity android:name=".bot"
             android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".worckshop"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".home_services"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".my_account"
-            android:theme="@style/AppTheme.NoTitle"
-            />
-        <activity android:name=".bot" />
-        <activity android:name=".vehicle"
-            android:theme="@style/AppTheme.NoTitle"
-            />
+        <activity
+            android:name=".vehicle"
+            android:theme="@style/AppTheme.NoTitle" />
         <activity android:name=".home" />
-        <activity android:name=".Registration_vehicle"
-            android:theme="@style/AppTheme.NoTitle"
-            />
-        <activity android:name=".registration_home_ocation"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".change_password"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".registration"
-            android:theme="@style/AppTheme.NoTitle"/>
-        <activity android:name=".Login"
-            android:theme="@style/AppTheme.NoTitle"/>
+        <activity
+            android:name=".Registration_vehicle"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".registration_home_ocation"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".change_password"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".registration"
+            android:theme="@style/AppTheme.NoTitle" />
+        <activity
+            android:name=".Login"
+            android:theme="@style/AppTheme.NoTitle" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".upi"
-            android:theme="@style/AppTheme.NoTitle"
-            />
+        <activity
+            android:name=".upi"
+            android:theme="@style/AppTheme.NoTitle" />
 
         <service android:name=".LocationService" />
         <service android:name=".notiservise" />
-
 
         <provider
             android:name="androidx.core.content.FileProvider"

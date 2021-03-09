@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#f2f2f2"
+    android:background="#FFF"
     android:layout_height="match_parent"
     tools:context=".news">
 
@@ -26,12 +26,15 @@
             android:id="@+id/textView46"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="136dp"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:gravity="center"
             android:text="TextView"
             android:textColor="#000"
             android:textSize="20dp"
-            android:textStyle="bold"
+            android:textStyle="bold|normal"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,11 +43,12 @@
             android:layout_width="0dp"
             android:layout_height="194dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="41dp"
+            android:layout_marginTop="68dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/textView46"
             app:srcCompat="@drawable/uup" />
 
         <TextView
@@ -62,12 +66,13 @@
 
         <TextView
             android:id="@+id/textView49"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
-            android:layout_marginEnd="40dp"
+            android:layout_width="46dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="92dp"
+            android:layout_marginEnd="32dp"
             android:text="date"
             android:textSize="9dp"
+            android:textColor="#fa4646"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

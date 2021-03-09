@@ -200,6 +200,7 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
                                 cus.notifyDataSetChanged();
                                if(selecteditems.size()>0){
 
+                                   Toast.makeText(worckshop.this, selecteditems.get(0)+"==def", Toast.LENGTH_SHORT).show();
                                    listView.getChildAt(Integer.parseInt(selecteditems.get(0))).setBackgroundColor(Color.GREEN);
                                }
 
@@ -276,18 +277,23 @@ public class worckshop extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        if(selecteditems.contains(position+"")){
-            listView.getChildAt(position).setBackgroundColor(Color.TRANSPARENT);
+        Toast.makeText(this, position+"", Toast.LENGTH_SHORT).show();
+        try {
+            if(selecteditems.contains(position+"")){
+                listView.getChildAt(position).setBackgroundColor(Color.TRANSPARENT);
 
-            selecteditems.remove(position+"");
-            totalAmount=totalAmount-Integer.parseInt(seramount.get(position));
-            amount.setText(totalAmount+"");
-        }
-        else{
-            selecteditems.add(position+"");
-            listView.getChildAt(position).setBackgroundColor(Color.GREEN);
-            totalAmount=totalAmount+Integer.parseInt(seramount.get(position));
-            amount.setText(totalAmount+"");
+                selecteditems.remove(position+"");
+                totalAmount=totalAmount-Integer.parseInt(seramount.get(position));
+                amount.setText(totalAmount+"");
+            }
+            else{
+                selecteditems.add(position+"");
+                listView.getChildAt(position).setBackgroundColor(Color.GREEN);
+                totalAmount=totalAmount+Integer.parseInt(seramount.get(position));
+                amount.setText(totalAmount+"");
+            }
+        }catch (Exception e){
+            Toast.makeText(this, e.toString()+"===", Toast.LENGTH_SHORT).show();
         }
 
 

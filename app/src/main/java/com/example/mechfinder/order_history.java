@@ -168,6 +168,12 @@ public class order_history extends AppCompatActivity implements AdapterView.OnIt
             startActivity(in);
 
         }
+        else if (status1.get(position).equalsIgnoreCase("cancel")){
+            Intent in = new Intent(getApplicationContext(), orederhistory_cancel.class);
+
+            startActivity(in);
+
+        }
 
     }
 }
